@@ -1,0 +1,18 @@
+# ignore gradle
+.gradle
+
+# ignore idea
+.idea
+
+# ignore build
+build
+out
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
+target/*.jar
+
+# ignore logs
+logs
