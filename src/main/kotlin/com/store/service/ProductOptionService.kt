@@ -2,15 +2,11 @@ package com.store.service
 
 import com.store.domain.ProductOption
 import com.store.repository.ProductOptionRepository
-import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 import java.util.*
 
 @Service
-class ProductOptionService {
-    @Autowired
-    lateinit var productOptionRepository: ProductOptionRepository
-
+class ProductOptionService(val productOptionRepository: ProductOptionRepository) {
     fun save(productOption: ProductOption): ProductOption {
         return productOptionRepository.save(productOption)
     }
