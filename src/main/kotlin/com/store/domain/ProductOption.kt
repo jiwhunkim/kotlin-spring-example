@@ -10,7 +10,7 @@ import javax.persistence.*
 @Table(name = "product_options", indexes = [
     Index(name = "idx_product_options_on_product_id", columnList = "productId")
 ])
-data class ProductOption(
+class ProductOption(
         @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
         var id: Long? = null,
         var name: String = "",

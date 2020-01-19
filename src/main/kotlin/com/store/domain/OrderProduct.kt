@@ -8,7 +8,7 @@ import javax.persistence.*
 
 @Entity
 @Table(name = "order_products")
-data class OrderProduct(
+class OrderProduct(
         @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
         var id: Long? = null,
         var quantity: Int = 0,

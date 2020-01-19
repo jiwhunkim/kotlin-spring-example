@@ -8,7 +8,7 @@ import javax.persistence.*
 
 @Entity
 @Table(name = "orders")
-data class Order(
+class Order(
         @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
         var id: Long? = null,
         var guid: String? = null,
