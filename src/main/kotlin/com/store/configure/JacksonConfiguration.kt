@@ -14,8 +14,8 @@ import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder
 class JacksonConfiguration {
 
     @Bean
-    fun objectMapper(builder: Jackson2ObjectMapperBuilder): ObjectMapper {
-        val objectMapper = builder.build<ObjectMapper>()
+    fun objectMapper(): ObjectMapper {
+        val objectMapper = Jackson2ObjectMapperBuilder().build<ObjectMapper>()
         objectMapper.registerModule(JavaTimeModule())
         objectMapper.registerModule(KotlinModule(nullisSameAsDefault = true))
         objectMapper.setSerializationInclusion(JsonInclude.Include.NON_NULL)

@@ -55,6 +55,39 @@ logging.level.org.hibernate.type.descriptor.sql: trace
 ---
 
 spring:
+  profiles: test
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/storedb_test?autoReconnect=true&useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Seoul
+    username: root
+    password: mysql
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      connection-test-query: SELECT 1
+  jpa:
+    show-sql: true
+    generate-ddl: false
+    database: mysql
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL57Dialect
+        format_sql: true
+  r2dbc:
+    url: r2dbc:pool:mysql://127.0.0.1:3306/storedb_test
+    username: root
+    password: mysql
+    pool:
+      initial-size: 100
+      max-size: 500
+      max-idle-time: 30m
+      validation-query: SELECT 1
+# bind parameter 로깅 on
+logging.level.org.hibernate.type.descriptor.sql: trace
+
+---
+
+spring:
   profiles: stage
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
