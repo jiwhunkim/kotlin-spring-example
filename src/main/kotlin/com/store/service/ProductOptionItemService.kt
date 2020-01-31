@@ -1,7 +1,7 @@
 package com.store.service
 
 import com.store.domain.ProductOptionItem
-import com.store.repository.ProductOptionItemRepository
+import com.store.repository.jpa.ProductOptionItemRepository
 import org.springframework.stereotype.Service
 import java.util.*
 

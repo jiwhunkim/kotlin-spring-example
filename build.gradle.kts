@@ -21,7 +21,7 @@ repositories {
 }
 
 dependencies {
-	implementation("org.springframework.boot:spring-boot-starter-data-jpa"){
+	implementation("org.springframework.boot:spring-boot-starter-data-jpa") {
 		exclude(module = "hibernate-core")
 	}
 	implementation("org.springframework.boot.experimental:spring-boot-starter-data-r2dbc")
@@ -31,6 +31,7 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
 	implementation("org.springframework.boot:spring-boot-starter-webflux")
 	implementation("org.springframework.boot:spring-boot-starter-data-redis")
+	implementation("org.springframework.boot.experimental:spring-boot-starter-data-r2dbc")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
@@ -51,7 +52,7 @@ dependencies {
 	implementation("com.querydsl:querydsl-jpa:4.2.2")
 	implementation("org.flywaydb:flyway-core:6.1.1")
 	runtimeOnly("mysql:mysql-connector-java")
-	implementation("dev.miku:r2dbc-mysql:0.8.0.RELEASE")
+	implementation("dev.miku:r2dbc-mysql:0.8.1.RELEASE")
 
 	api("org.slf4j:slf4j-api:1.7.26")
 	api("ch.qos.logback:logback-classic:1.2.3")
@@ -61,7 +62,7 @@ dependencies {
 	api("net.logstash.logback:logstash-logback-encoder:6.3")
 
 	api("io.springfox:springfox-swagger2:2.9.2") {
-		exclude(group="io.swagger", module = "swagger-annotations")
+		exclude(group = "io.swagger", module = "swagger-annotations")
 		exclude(group="io.swagger", module = "swagger-models")
 	}
 	api("io.springfox:springfox-swagger-ui:2.9.2")
@@ -77,7 +78,7 @@ dependencies {
 
 dependencyManagement {
 	imports {
-		mavenBom("org.springframework.boot.experimental:spring-boot-bom-r2dbc:0.1.0.M3")
+		mavenBom("org.springframework.boot.experimental:spring-boot-bom-r2dbc:0.1.0.M2")
 	}
 }
 

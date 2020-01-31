@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity
 import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.*
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder
+import reactor.core.publisher.Mono
 
 @Controller
 @RequestMapping("/api/orders")
@@ -34,6 +35,14 @@ class OrderController {
         val order = orderService.findById(orderId).get()
         return ResponseEntity.ok(order)
     }
+
+    @GetMapping("/reactive/{order_id}")
+    @ResponseBody
+    fun showReactive(@PathVariable("order_id") orderId: Long): ResponseEntity<Mono<Order>> {
+        val order = orderService.findByIdRx(orderId)
+        return ResponseEntity.ok(order)
+    }
+
 
     @PutMapping("/{order_id}")
     fun update(@PathVariable("order_id") orderId: Long, @RequestBody order: Order): ResponseEntity<Order> {

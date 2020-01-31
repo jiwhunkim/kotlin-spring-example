@@ -1,7 +1,7 @@
 package com.store.service
 
 import com.store.domain.OrderProduct
-import com.store.repository.OrderProductRepository
+import com.store.repository.jpa.OrderProductRepository
 import org.springframework.stereotype.Service
 import java.util.*
 
