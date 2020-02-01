@@ -18,7 +18,7 @@ class OrderProduct(
 
         @ManyToOne(fetch = FetchType.LAZY, optional = false)
         @JoinColumn(name = "orderId", foreignKey = ForeignKey(ConstraintMode.NO_CONSTRAINT))
-        @JsonIgnoreProperties(value = ["order_products"])
+        @JsonIgnoreProperties(value = ["orderProducts"])
         var order: Order?,
 
         @ManyToOne(fetch = FetchType.LAZY, optional = false)
