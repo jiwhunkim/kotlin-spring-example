@@ -9,7 +9,9 @@ import javax.persistence.*
 @Entity
 @Table(name = "orders")
 class Order(
-        @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+        @javax.persistence.Id
+        @org.springframework.data.annotation.Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
         var id: Long? = null,
         var guid: String? = null,
         var buyerName: String = "",
